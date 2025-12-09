@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en=ca">
+  <head>
+    <meta charset="UTF-8">
+    <title>FINAL PROJECT - ZAHRA OMAR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+
+    <style>
+      html {
+        width: 1440px;
+      }
+
+      body {
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      #nav {
+        position: sticky;
+        top: 0;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        background-color: #e4281f;
+        padding: 30px;
+        z-index: 1000;
+      }
+
+      #nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+      }
+
+      #nav li {
+        display: inline-block;
+        margin-right: 30px;
+      }
+
+      #nav a {
+        text-decoration: none;
+        color: black;
+      }
+
+      #nav a:hover {
+        color: white;
+        font-weight: 700;
+      }
+
+      .nav-logo {
+        position: relative;
+        float: right;
+        right: 300px;
+        bottom: 30px;
+      }
+
+      .cart-button {
+        border: 2px solid black;
+        font-family: "poppins", sans-serif;
+        font-weight: 900;
+        background-color: #fdedc9;
+        padding: 10px 15px;
+        border-radius: 30px;
+        text-align: center;
+        font-size: 10px;
+        margin: 4px 10px;
+        float: right;
+        position: relative;
+        display: inline-block;
+        box-shadow: 9px 9px black;
+        bottom: 20px;
+      }
+
+      .table-button {
+        border: 2px solid black;
+        font-family: "poppins", sans-serif;
+        font-weight: 900;
+        background-color: #fdedc9;
+        padding: 10px 15px;
+        border-radius: 30px;
+        text-align: center;
+        font-size: 10px;
+        margin: 4px 2px;
+        float: right;
+        position: relative;
+        display: inline-block;
+        box-shadow: 9px 9px black;
+        bottom: 20px;
+      }
+
+
+      .table-button:hover,
+      .cart-button:hover {
+        background-color: #1c6139;
+        color: #fdedc9;
+      }
+
+      #hero {
+        background-color: #e4281f;
+        padding: 100px 0px;
+      }
+
+      .hero-wrapper {
+        width: 800px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .hero-img {
+        width: 100%;
+        display: block;
+        border: 3px solid black;
+        box-shadow: 12px 12px black;
+        border-radius: 30px;
+      }
+
+      .hero-logo {
+        position: absolute;
+        padding-left: 150px;
+        bottom: 475px;
+      }
+
+      h1 {
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        text-align: center;
+        margin: 0 0 25px;
+      }
+
+      #tagline {
+        background-color: #fdedc9;
+        padding: 40px 20px;
+        position: relative;
+      }
+
+      .tagline-buttons {
+        text-align: center;
+      }
+
+      .menu-button,
+      .order-online-button {
+        border: 2px solid black;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        background-color: #1c6139;
+        color: #fdedc9;
+        padding: 15px 35px;
+        border-radius: 30px;
+        font-size: 18px;
+        box-shadow: 6px 6px black;
+        margin: 0px 30px;
+      }
+
+      .menu-button:hover,
+      .order-online-button:hover {
+        background-color: #e4281f;
+      }
+
+      .pepper {
+        position: absolute;
+        z-index: 200;
+      }
+
+      .pepper-hero-left {
+        right: 650px;
+        top: 600px;
+      }
+
+      .pepper-hero-right {
+        left: 650px;
+        top: 600px;
+      }
+
+      .pepper-tagline-left {
+        left: 50px;
+        top: 100px;
+      }
+
+      .pepper-tagline-right {
+        right: 120px;
+        top: 150px;
+      }
+
+      #trending {
+        background-color: #ffffff;
+        padding: 30px 100px;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .trending-title {
+        font-size: 48px;
+        margin: 0;
+      }
+
+      .trending-subtitle {
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: 16px;
+      }
+
+      /*from here the carosel was made all from GEN AI, my prompt was "can you help me make a slideshow with only three items, and for the item that is selected, it shows a add to cart button and with two buttons on each side"*/
+      .product-carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      .carousel-btn {
+        background-color: #1c6139;
+        color: #fdedc9;
+        border: 2px solid black;
+        width: 60px;
+        height: 55px;
+        border-radius: 50%;
+        font-size: 24px;
+        box-shadow: 4px 4px black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .product-card {
+        width: 260px;
+        padding: 20px 15px 30px;
+        border-radius: 30px;
+        box-shadow: 8px 8px black;
+        border: 3px solid black;
+        background-color: white;
+        transition: transform 0.3s ease;
+        text-align: center;
+      }
+
+      .product-image-wrapper {
+        width: 100%;
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        border-radius: 24px;
+      }
+
+      .product-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .product-name {
+        margin: 15px 0 2px;
+        font-size: 14px;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 800;
+      }
+
+      .product-price {
+        margin: 10px 10px;
+        font-size: 12px;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 500;
+      }
+
+      .product-description {
+        font-size: 12px;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 700;
+      }
+
+      .add-to-cart {
+        font-family: "Poppins", sans-serif;
+        margin-top: 18px;
+        padding: 12px 40px;
+        border-radius: 30px;
+        border: 2px solid black;
+        background-color: #e4281f;
+        color: #fdedc9;
+        font-weight: 900;
+        font-size: 14px;
+        box-shadow: 6px 6px black;
+        display: none;
+
+      }
+
+      .product-card.center {
+        transform: scale(1.15);
+        z-index: 10;
+      }
+
+      .add-to-cart:hover {
+        background-color: #fdedc9;
+        color: #e4281f;
+      }
+
+      .product-card.center,
+      .product-name {
+        font-size: 16px;
+      }
+
+      .product-card.center,
+      .product-description {
+        font-size: 13px;
+        font-weight: 600;
+      }
+
+      .product-card.center .add-to-cart {
+        display: inline-block;
+      }
+
+      .product-card.left,
+      .product-card.right {
+        transform: scale(0.9);
+        opacity: 0.9;
+      }
+
+      /*this is the ending of the GEN AI helping with the carousel*/
+
+      .quote {
+        background-color: #76413c;
+        font-family: "Be Vietnam Pro", sans-serif;
+        text-align: center;
+        color: #ffbd52;
+        margin-top: 50px;
+        padding: 50px 10px;
+
+      }
+
+      h3 {
+        font-weight: 500;
+      }
+
+
+      #features-row {
+        display: flex;
+        /* I used GEN AI to get some help in making the images in a row and making it possible to add images inside of it with a text at the bottom. My prompt was "Why isnt my circles aligning and how do i add icons inside of them with a text underneth"*/
+        justify-content: space-between;
+        align-items: flex-start;
+        text-align: center;
+        padding: 60px 40px 80px;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      .dot {
+        height: 150px;
+        width: 150px;
+        background-color: #fdedc9;
+        border-radius: 50%;
+        border: 3px solid black;
+        box-shadow: 12px 12px black;
+        margin: 40px 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dot img {
+        width: 60%;
+      }
+
+      .feature-label {
+        font-family: "Be Vietnam Pro", sans-serif;
+        padding-top: 20px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      footer {
+        position: relative;
+        background-color: #e4281f;
+        color: #ffe7c3;
+        padding: 60px 60px;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+
+      .footer-logo {
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+      }
+
+      .footer-columns {
+        display: inline-block;
+        width: 65%;
+        vertical-align: top;
+      }
+
+      .footer-column {
+        display: inline-block;
+        width: 23%;
+        margin-right: 1%;
+        vertical-align: top;
+      }
+
+      .footer-column h4 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .footer-column p,
+      .footer-column a {
+        margin: 0 0 6px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #ffe7c3;
+      }
+
+      .footer-newsletter-title {
+        font-size: 20px;
+        font-weight: 800;
+        position: absolute;
+        bottom: 75px;
+        right: 560px;
+      }
+
+      .newsletter-box {
+        display: inline-block;
+        padding: 15px 15px;
+        border-radius: 60px;
+        border: 3px solid black;
+        box-shadow: 10px 10px black;
+        position: absolute;
+        bottom: 60px;
+        right: 250px;
+      }
+
+      .newsletter-input {
+        border: none;
+        background: transparent;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 14px;
+        width: 260px;
+        outline: none;
+      }
+
+      .newsletter-input::placeholder {
+        /* Code copied from: [https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_placeholder]
+        Author: [W3SCHOOLS]
+        Name: [N/A]
+        Description: [helped with the placeholder]
+        Date retrieved: [Dec 6 2025]
+        */
+        color: black;
+      }
+
+      .newsletter-button {
+        position: absolute;
+        background-color: #e4281f;
+        color: #000000;
+        right: 180px;
+        bottom: 60px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: 3px solid black;
+        box-shadow: 10px 10px black;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+
+      }
+
+      .newsletter-button:hover {
+        background-color: #1c6139;
+        color: #fdedc9;
+      }
+
+      /* SOCIAL ICONS ROW */
+      .social-icon {
+        position: absolute;
+        right: 40px;
+        bottom: 60px;
+
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="nav">
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="about-us.html">ABOUT</a></li>
+      </ul>
+      <button class="table-button">RESERVE TABLE</button>
+      <button class="cart-button">CART</button>
+      <div class="nav-logo">
+        <img src="spicy-cartel-menu-logo.png" alt="horizontal spicy cartel logo in black">
+      </div>
+    </div>
+
+
+    <div id="hero">
+      <div class="hero-wrapper">
+        <img class="hero-img" src="hero-tacos.jpg" alt="3 tacos with topings falling from above on a yellow background">
+        <img class="hero-logo" src="spicy-cartel-main-logo.png" alt="burritos, sauces, churros, pitas on plates on a table">
+
+        <img class="pepper pepper-hero-left" src="pepper-1.png" alt="red pepper with green stem tilted angle">
+        <img class="pepper pepper-hero-right" src="pepper-2.png" alt="yellow pepper with green stem tilted angle">
+      </div>
+    </div>
+
+
+    <div id="tagline">
+      <h1>Come hungry. Leave smiling…<br>and maybe a little salsa-stained.</h1>
+
+      <div class="tagline-buttons">
+        <button class="menu-button">MENU</button>
+        <button class="order-online-button">ORDER ONLINE</button>
+      </div>
+
+      <img class="pepper pepper-tagline-left" src="pepper-3.png" alt="green pepper with green stem tilted angle">
+      <img class="pepper pepper-tagline-right" src="pepper-4.png" alt="red curved pepper with green stem tilted angle">
+    </div>
+
+
+    <img src="multiple-foods-photo-for-main.jpeg" alt="burrito, beans, salsa, limes, churros and more mexican foods on a table and on plates" width="1200">
+
+
+    <div id="trending">
+      <h2 class="trending-title">TRENDING PRODUCTS</h2>
+      <p class="trending-subtitle">You’ll be getting fat in no time.</p>
+
+      <!-- GEN AI assist continued for carousel (claimed in css)-->
+      <div class="product-carousel">
+        <button class="carousel-btn prev" onclick="changeProduct(-1)">&#10094;</button>
+
+        <div class="product-card center">
+          <div class="product-image-wrapper">
+            <img src="spicy-mango-tropical-drink.jpg" class="product-image" alt="orange and red blended drink in a glass bottle sitting in a grey background">
+          </div>
+          <p class="product-name">SPICY TROPICAL MANGO</p>
+          <h5 class="product-price">$10.00</h5>
+          <p class="product-description">A blend of sweet mango and tropical fruit with a hint of chili heat.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card right">
+          <div class="product-image-wrapper">
+            <img src="chamoy-sauce.jpg" class="product-image" alt="red chamoy sauce in a glass jar with spicy cartel logo in a glass bottle in a grey background.">
+          </div>
+          <p class="product-name">CHAMOY SAUCE</p>
+          <h5 class="product-price">$11.99</h5>
+          <p class="product-description">A sweet, sour, spicy Mexican-style sauce made from fruit, chili, and lime.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
+
+        <div class="product-card left">
+          <div class="product-image-wrapper">
+            <img src="fiesta-crunch-mix.jpg" class="product-image" alt="tortilla chips with seasoning bursting out a white paper bag that has a spicy cartel logo on it sitting in a grey background">
+          </div>
+          <h3 class="product-name">FIESTA CRUNCH MIX</h3>
+          <p class="product-price">$7.99</p>
+          <p class="product-description">A salty, sweet, spicy mix of corn bites, tortilla strips, peanuts, and jalapeño chips.</p>
+          <button class="add-to-cart">ADD TO CART</button>
+        </div>
+
+        <button class="carousel-btn next" onclick="changeProduct(1)">&#10095;</button>
+      </div>
+    </div>
+
+    <script>
+      let currentIndex = 0;
+
+      function updateCards () {
+        const cards = document.querySelectorAll(".product-card");
+        const total = cards.length;
+
+        cards.forEach(card => {
+          card.classList.remove("left", "center", "right");
+        });
+
+        const center = currentIndex;
+        const right = (currentIndex + 1) % total;
+        const left = (currentIndex + total - 1) % total;
+
+        cards[center].classList.add("center");
+        cards[right].classList.add("right");
+        cards[left].classList.add("left");
+      }
+
+      function changeProduct (direction) {
+        const cards = document.querySelectorAll(".product-card");
+        const total = cards.length;
+
+        currentIndex = (currentIndex + direction + total) % total;
+        updateCards();
+      }
+
+      document.addEventListener("DOMContentLoaded", updateCards);
+    </script>
+    <!-- end of GEN AI assist -->
+
+    <div class="quote">
+      <h1>"THE BEST MEXICAN FOOD EVER!"</h1>
+
+      <h3>-Canadian Top Gun Critics</h3>
+    </div>
+
+    <div> <img src="mexican-drinks-home-page.jpeg" alt="multiple drinks in glasses with a varaity of colours and limes ontop of the glass" width="1200">
+    </div>
+
+    <div id="features-row">
+      <div class="feature-item">
+        <div class="dot">
+          <img src="takeout-icon.png" alt="takeout bag icon with 3 different takeout boxs">
+        </div>
+        <p class="feature-label">FAST &amp; CONVENIENT</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="dot">
+          <img src="cooking-icon.png" alt="cooking pot icon that has spoon and splashed coming out from the top">
+        </div>
+        <p class="feature-label">AUTHENTIC FLAVOURS</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="dot">
+          <img src="burrito-icon.png" alt="burrito icon that has lettuce and tomato">
+        </div>
+        <p class="feature-label">HEALTHY OPTIONS</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="dot">
+          <img src="produce-icon.png" alt="produce icon that has pear, apple, carrot">
+        </div>
+        <p class="feature-label">FRESH INGREDIENTS</p>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-logo">
+        <img src="spicy-cartel-main-logo.png" alt="black Spicy Cartel logo" width="300">
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>LOCATION</h4>
+          <p>218 Maple Crest Road</p>
+          <p>Toronto, ON M4H 2L9</p>
+          <p>Canada</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>CONTACT</h4>
+          <p>Phone:<br>(416) 982–4473</p>
+          <p>Email:<br>info@spicycartel.ca</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>PRODUCTS</h4>
+          <p>Sauces</p>
+          <p>Drinks</p>
+          <p>Snacks</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>QUICK LINKS</h4>
+          <a href="#">Menu</a><br>
+          <a href="#">Reserve Table</a><br>
+          <a href="#">Cart</a><br>
+          <a href="#">About</a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter-title">JOIN OUR NEWSLETTER!</div>
+
+      <div class="newsletter-box">
+        <input class="newsletter-input" type="text" placeholder="enter your email...">
+      </div>
+      <button class="newsletter-button">GO</button>
+      <img class="social-icon" src="social-icons.png" alt="Facebook, Instagram, X logo" width="100">
+    </footer>
+  </body>
+</html>

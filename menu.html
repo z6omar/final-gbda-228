@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en=ca">
+  <head>
+    <meta charset="UTF-8">
+    <title>FINAL PROJECT - ZAHRA OMAR</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&family=Poppins:wght@800;900&display=swap" rel="stylesheet">
+
+    <style>
+      html {
+        width: 1440px;
+      }
+
+      body {
+        width: 1200px;
+        margin: 0 auto;
+      }
+
+      #nav {
+        position: sticky;
+        top: 0;
+        background-color: #e4281f;
+        padding: 20px 30px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 13px;
+      }
+
+      .nav-left {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav-left a {
+        text-decoration: none;
+        color: black;
+      }
+
+      .nav-left a:hover {
+        color: white;
+        font-weight: 700;
+      }
+
+      .nav-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        /* I used GEN AI to help me center my logo. Promt was "why isnt my logo being centered"*/
+      }
+
+      .nav-right {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-left: 0 auto;
+      }
+
+      .cart-button,
+      .table-button {
+        border: 2px solid black;
+        background-color: #fdedc9;
+        padding: 10px 15px;
+        border-radius: 30px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 900;
+        font-size: 10px;
+        box-shadow: 9px 9px black;
+        cursor: pointer;
+      }
+
+      .cart-button:hover,
+      .table-button:hover {
+        background-color: #1c6139;
+        color: #fdedc9;
+      }
+
+      #hero {
+        position: relative;
+        width: 1200px;
+        height: 450px;
+        overflow: hidden;
+         /* I used GEN AI to help me make my photo cropped and centred. Prompt was "can you help me make my background photo be cropped so I can always upload an image and it crops it for me."*/
+
+      }
+
+      #hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* A continued part of using GEN AI  to help me make my photo cropped and centred.*/
+      }
+
+      .hero-box {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 800px;
+        height: 300px;
+        background-color: #fdedc9;
+        border-radius: 30px;
+        border: 3px solid black;
+        box-shadow: 12px 12px black;
+      }
+
+      .hero-title {
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        text-align: center;
+        font-family: "Poppins", sans-serif;
+        font-size: 60px;
+        margin: 0;
+      }
+
+      .hero-links {
+        position: absolute;
+        bottom: 60px;
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-links a {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 700;
+        font-size: 22px;
+        text-decoration: none;
+        color: black;
+        margin: 0 25px;
+      }
+
+      .hero-links a:hover {
+        color: #e4281f;
+      }
+
+      h2 {
+        color: #1c6139;
+        font-family: "Poppins", sans-serif;
+        font-size: 40px;
+        text-align: center;
+      }
+
+      h3 {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 25px;
+      }
+
+      p {
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        gap: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px 0;
+      }
+
+      .grid-item img {
+        width: 100%;
+        display: block;
+        border-radius: 20px;
+      }
+
+      .protein {
+        background-color: #76413c;
+        padding: 30px 80px;
+        margin: 50px 0;
+      }
+
+      .protein-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 35px;
+        color: #ffbd52;
+        text-align: center;
+        margin-bottom: 40px;
+        margin-top: 0px
+      }
+
+      .protein-row {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* I used w3schools and GEN AI to help me make these colums. I found the starter from w3schools, but i didnt copy it, then I promted GEN AI, "can you help me make 4 colums using repeat."*/
+        gap: 40px;
+      }
+
+      .protein-col-title {
+        font-family: "Poppins", sans-serif;
+        font-size: 25px;
+        font-weight: 800;
+        color: #ffbd52;
+        margin-bottom: 10px;
+      }
+
+      .protein-name {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 800;
+        color: white;
+        margin: 0;
+      }
+
+      .protein-desc {
+        font-family: "Be Vietnam Pro", sans-serif;
+        color: white;
+        margin: 0 0 20px 0;
+      }
+
+
+      .tag {
+        background-color: #fdedc9;
+        padding: 40px 50px;
+        text-align: center;
+      }
+
+      .tag-title h2 {
+        color: #e4281f;
+        margin-top: 0;
+      }
+
+      .tag-button {
+        display: inline-block;
+        color: #fdedc9;
+        font-family: "Poppins", sans-serif;
+        border: 2px solid black;
+        background-color: #e4281f;
+        border-radius: 30px;
+        padding: 10px 15px;
+        font-weight: 900;
+        font-size: 20px;
+        box-shadow: 9px 9px black;
+        cursor: pointer;
+      }
+
+      .tag-button:hover {
+        color: #e4281f;
+        background-color: #fdedc9;
+      }
+
+      footer {
+        position: relative;
+        background-color: #e4281f;
+        color: #ffe7c3;
+        padding: 60px 60px;
+        font-family: "Be Vietnam Pro", sans-serif;
+      }
+
+      .footer-logo {
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+      }
+
+      .footer-columns {
+        display: inline-block;
+        width: 65%;
+        vertical-align: top;
+      }
+
+      .footer-column {
+        display: inline-block;
+        width: 23%;
+        margin-right: 1%;
+        vertical-align: top;
+      }
+
+      .footer-column h4 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        font-weight: 800;
+      }
+
+      .footer-column p,
+      .footer-column a {
+        margin: 0 0 6px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #ffe7c3;
+      }
+
+      .footer-newsletter-title {
+        font-size: 20px;
+        font-weight: 800;
+        position: absolute;
+        bottom: 75px;
+        right: 560px;
+      }
+
+      .newsletter-box {
+        display: inline-block;
+        padding: 15px 15px;
+        border-radius: 60px;
+        border: 3px solid black;
+        box-shadow: 10px 10px black;
+        position: absolute;
+        bottom: 60px;
+        right: 250px;
+      }
+
+      .newsletter-input {
+        border: none;
+        background: transparent;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 14px;
+        width: 260px;
+        outline: none;
+      }
+
+      .newsletter-input::placeholder {
+        color: black;
+        /* Code copied from: [https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_input_placeholder]
+        Author: [W3SCHOOLS]
+        Name: [N/A]
+        Description: [helped with the placeholder]
+        Date retrieved: [Dec 6 2025]
+        */
+
+      }
+
+      .newsletter-button {
+        position: absolute;
+        background-color: #e4281f;
+        color: #000000;
+        right: 180px;
+        bottom: 60px;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        border: 3px solid black;
+        box-shadow: 9px 9px black;
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        cursor: pointer;
+      }
+
+      .newsletter-button:hover {
+        background-color: #1c6139;
+        color: #fdedc9;
+      }
+
+      .social-icon {
+        position: absolute;
+        right: 40px;
+        bottom: 60px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div id="nav">
+
+      <ul class="nav-left">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="products.html">PRODUCTS</a></li>
+        <li><a href="about-us.html">ABOUT</a></li>
+      </ul>
+
+
+      <div class="nav-center">
+        <img src="spicy-cartel-menu-logo.png" alt="Spicy Cartel Logo">
+      </div>
+
+      <div class="nav-right">
+        <button class="cart-button">CART</button>
+        <button class="table-button">RESERVE TABLE</button>
+      </div>
+    </div>
+
+    <div id="hero">
+      <img src="menu-hero-photo.jpeg" alt="different type of mexian foods like rice, salsa, chips, lime on plates">
+
+      <div class="hero-box">
+        <h1 class="hero-title">THE MENU</h1>
+
+        <div class="hero-links">
+          <a href="#tacos">TACOS</a>
+          <a href="#mains">MAINS</a>
+          <a href="#drinks">DRINKS</a>
+          <a href="#dessert">DESSERTS</a>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="tacos">
+      <h2>TACOS</h2>
+    </div>
+
+    <div class="container">
+      <div class="grid-item">
+        <h3>Taco al Pastor - 12</h3>
+        <p>Marinated pork, pineapple, cilantro, onion.</p>
+
+        <h3>Taco de Pollo - 14</h3>
+        <p>Grilled chicken, lettuce, avocado crema.</p>
+
+        <h3>Taco de Nopales - 15</h3>
+        <p>Cactus, cheese, salsa verde. (vegetarian)</p>
+      </div>
+
+      <div class="grid-item">
+        <img src="taco-menu.jpg" alt="a taco on a white plate that has tomato, cheese, onions, lettuce on a white background">
+      </div>
+    </div>
+
+    <div id="mains">
+      <h2>MAINS</h2>
+    </div>
+
+    <div class="container">
+      <div class="grid-item">
+        <img src="main-menu.jpg" alt="beans, onions, lettuce, burrito and curry on a plate in a white background">
+      </div>
+
+      <div class="grid-item">
+        <h3>Enchiladas Verdes - 22</h3>
+        <p>Corn tortillas with shredded chicken, tomatillo sauce, cheese.</p>
+
+        <h3>Burrito Bowl - 20</h3>
+        <p>Rice, beans, pico de gallo, guacamole, choice of protein.</p>
+
+        <h3>Chiles Rellenos - 22</h3>
+        <p>Poblano peppers stuffed with cheese and tomato sauce.</p>
+      </div>
+    </div>
+
+
+    <div class="protein">
+      <h4 class="protein-title">PROTEINS</h4>
+
+      <div class="protein-row">
+        <div>
+          <p class="protein-col-title">CHICKEN</p>
+          <p class="protein-name">Pollo Asado</p>
+          <p class="protein-desc">– Grilled citrus marinated chicken</p>
+        </div>
+
+        <div>
+          <p class="protein-col-title">STEAK</p>
+          <p class="protein-name">Carne Asada</p>
+          <p class="protein-desc">– Charbroiled steak slices</p>
+        </div>
+
+        <div>
+          <p class="protein-col-title">BEEF</p>
+          <p class="protein-name">Barbacoa</p>
+          <p class="protein-desc">– Tender shredded beef</p>
+        </div>
+
+        <div>
+          <p class="protein-col-title">VEGETARIAN</p>
+          <p class="protein-name">Frijoles Negros</p>
+          <p class="protein-desc">– Seasoned black beans</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="drinks">
+      <h2>DRINKS</h2>
+    </div>
+
+    <div class="container">
+      <div class="grid-item">
+        <h3>Rosa del Cielo - 7</h3>
+        <p>A pink drink made with hibiscus, strawberry, and a splash of coconut water.</p>
+
+        <h3>Spicy Mango Tropical Drink - 9</h3>
+        <p>A bright blend of mango, lime, and a touch of chili sugar. Sweet, refreshing, and slightly spicy.</p>
+
+        <h3>Verde Vital - 8</h3>
+        <p>Refreshing green blend: lime, honeydew, mint, and a touch of aloe vera.</p>
+      </div>
+
+      <div class="grid-item">
+        <img src="drink-menu.jpg" alt="pink drink in a glass with strawberry inside and ontop on a white background">
+      </div>
+    </div>
+
+
+    <div id="dessert">
+      <h2>DESSERTS</h2>
+    </div>
+
+    <div class="container">
+      <div class="grid-item">
+        <img src="dessert-menu.jpg" alt="carmel custard on a plate with sugar sauce ontop and carrot shavings">
+      </div>
+
+      <div class="grid-item">
+        <h3>Fiesta Crunch Mix - 10</h3>
+        <p>Crispy corn bites, toasted tortilla strips, chili-lime peanuts, and sweet mango chips tossed in our signature fuego seasoning. Hits with a mix of salty, spicy, and sweetness.</p>
+
+        <h3>Dulce de Sol - 12</h3>
+        <p>A warm cinnamon-vanilla custard topped with caramelized orange zest and a sprinkle of chili sugar. Sweet, creamy, and lightly spiced.</p>
+      </div>
+    </div>
+
+    <div class="tag">
+      <div class="tag-title">
+        <h2>TRY OUT OUR DELICIOUSNESS!</h2>
+      </div>
+      <button class="tag-button">RESERVE TABLE</button>
+    </div>
+
+
+    <footer>
+      <div class="footer-logo">
+        <img src="spicy-cartel-main-logo.png" alt="black Spicy Cartel logo" width="300">
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h4>LOCATION</h4>
+          <p>218 Maple Crest Road</p>
+          <p>Toronto, ON M4H 2L9</p>
+          <p>Canada</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>CONTACT</h4>
+          <p>Phone:<br>(416) 982–4473</p>
+          <p>Email:<br>info@spicycartel.ca</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>PRODUCTS</h4>
+          <p>Sauces</p>
+          <p>Drinks</p>
+          <p>Snacks</p>
+        </div>
+
+        <div class="footer-column">
+          <h4>QUICK LINKS</h4>
+          <a href="#">Menu</a><br>
+          <a href="#">Reserve Table</a><br>
+          <a href="#">Cart</a><br>
+          <a href="#">About</a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter-title">JOIN OUR NEWSLETTER!</div>
+
+      <div class="newsletter-box">
+        <input class="newsletter-input" type="text" placeholder="enter your email...">
+      </div>
+
+      <button class="newsletter-button">GO</button>
+
+      <img class="social-icon" src="social-icons.png" alt="circle of facebook, instagram, x logos" width="100">
+    </footer>
+
+  </body>
+</html>
